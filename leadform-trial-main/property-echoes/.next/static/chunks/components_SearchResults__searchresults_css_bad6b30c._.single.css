@@ -1,0 +1,37 @@
+/* [project]/components/SearchResults/_searchresults.css [app-client] (css) */
+.pagination-button {
+  --tw-bg-opacity: 1;
+  background-color: rgba(0, 0, 0, var(--tw-bg-opacity, 1));
+  text-align: center;
+  --tw-text-opacity: 1;
+  width: 100px;
+  color: rgba(255, 255, 255, var(--tw-text-opacity, 1));
+  border-radius: .25rem;
+  padding: .5rem 1rem;
+}
+
+.pagination-buttons {
+  justify-content: space-around;
+  align-items: center;
+  width: 800px;
+  padding: 1.25rem;
+  display: flex;
+}
+
+.load-button {
+  --tw-bg-opacity: 1;
+  background-color: rgba(0, 0, 0, var(--tw-bg-opacity, 1));
+  text-align: center;
+  --tw-text-opacity: 1;
+  width: 200px;
+  color: rgba(255, 255, 255, var(--tw-text-opacity, 1));
+  border-radius: .25rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.25rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: .5rem;
+}
+
+/*# sourceMappingURL=components_SearchResults__searchresults_css_bad6b30c._.single.css.map*/
