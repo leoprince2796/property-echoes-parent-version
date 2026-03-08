@@ -1,0 +1,47 @@
+/* [project]/components/Categories/_categories.css [app-client] (css) */
+.category-div, .category-content-div {
+  flex-direction: column;
+  display: flex;
+}
+
+.category-elements {
+  cursor: pointer;
+  --tw-border-opacity: 1;
+  border-bottom-width: 1px;
+  border-color: rgba(243, 244, 246, var(--tw-border-opacity, 1));
+  --tw-text-opacity: 1;
+  color: rgba(0, 33, 71, var(--tw-text-opacity, 1));
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  font-size: .875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  transition-property: color, background-color, border-color, -webkit-text-decoration-color, text-decoration-color, fill, stroke;
+  transition-duration: .15s;
+  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+}
+
+.category-elements:hover {
+  --tw-text-opacity: 1;
+  color: rgba(197, 160, 89, var(--tw-text-opacity, 1));
+}
+
+.category-elements:last-child {
+  border-bottom-width: 0;
+}
+
+/* [project]/components/PostCard/_postcard.css [app-client] (css) */
+.postcard-div {
+  --tw-text-opacity: 1;
+  color: rgba(0, 0, 0, var(--tw-text-opacity, 1));
+  flex-direction: column;
+  display: flex;
+}
+
+@media (min-width: 1024px) {
+  .postcard-div {
+    grid-column: span 8 / span 8;
+  }
+}
+
+/*# sourceMappingURL=components_ba218179._.css.map*/

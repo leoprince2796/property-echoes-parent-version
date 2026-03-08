@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/components/Header Components/DesktopContent/_desktopcontent.css"],"sourcesContent":[".desktop-content-div {\n    display: flex;\n    align-items: center;\n    --tw-text-opacity: 1;\n    color: rgb(255 255 255 / var(--tw-text-opacity, 1))\n}\n.desktop-category-content-div {\n    display: flex;\n    align-items: center;\n    background-color: transparent\n}\n.category-title-element-div {\n    display: none;\n    padding: 0.75rem\n}\n@media (min-width: 1024px) {\n    .category-title-element-div {\n        display: block\n    }\n}\n"],"names":[],"mappings":"AAAA;;;;;;;AAMA;;;;;;AAKA;;;;;AAIA;EACI"}}]
+}

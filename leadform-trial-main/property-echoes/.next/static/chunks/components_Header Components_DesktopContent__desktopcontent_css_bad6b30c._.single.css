@@ -1,0 +1,26 @@
+/* [project]/components/Header Components/DesktopContent/_desktopcontent.css [app-client] (css) */
+.desktop-content-div {
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity, 1));
+  align-items: center;
+  display: flex;
+}
+
+.desktop-category-content-div {
+  background-color: rgba(0, 0, 0, 0);
+  align-items: center;
+  display: flex;
+}
+
+.category-title-element-div {
+  padding: .75rem;
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .category-title-element-div {
+    display: block;
+  }
+}
+
+/*# sourceMappingURL=components_Header%20Components_DesktopContent__desktopcontent_css_bad6b30c._.single.css.map*/

@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/components/Header Components/MobileContent/_mobilecontent.css"],"sourcesContent":[".mobile-content-div {\n\n    margin: 1.25rem;\n\n    display: block;\n\n    display: flex;\n\n    align-items: center;\n\n    font-size: 1.5rem;\n\n    line-height: 2rem;\n\n    --tw-text-opacity: 1;\n\n    color: rgb(255 255 255 / var(--tw-text-opacity, 1))\n}\n\n@media (min-width: 1024px) {\n\n    .mobile-content-div {\n\n        display: none\n    }\n}\n\n.mobile-content-options-div {\n\n    display: flex;\n\n    flex-direction: column;\n\n    --tw-text-opacity: 1;\n\n    color: rgb(255 255 255 / var(--tw-text-opacity, 1))\n}\n.category-title-element-div {\n\n    padding: 0.75rem\n}\n"],"names":[],"mappings":"AAAA;;;;;;;;;;AAmBA;EAEI;;;;;AAMJ;;;;;;;AAUA"}}]
+}

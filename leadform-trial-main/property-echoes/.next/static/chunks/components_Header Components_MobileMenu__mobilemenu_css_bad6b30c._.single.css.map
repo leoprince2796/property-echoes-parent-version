@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/components/Header Components/MobileMenu/_mobilemenu.css"],"sourcesContent":[".mobile-view-menu-div {\n\n    margin: 1.25rem;\n\n    display: block;\n\n    display: flex;\n\n    flex-direction: column;\n\n    text-align: center;\n\n    font-size: 1.875rem;\n\n    line-height: 2.25rem;\n\n    --tw-text-opacity: 1;\n\n    color: rgb(255 255 255 / var(--tw-text-opacity, 1))\n}\n\n@media (min-width: 1024px) {\n\n    .mobile-view-menu-div {\n\n        display: none\n    }\n}\n\n.mobile-view-close-menu-div {\n\n    display: none\n}\n.mobile-category-title-element-div {\n\n    display: flex;\n\n    width: 100%;\n\n    align-items: center;\n\n    justify-content: center;\n\n    padding-top: 1rem;\n\n    padding-bottom: 1rem;\n\n    padding-left: 0.5rem;\n\n    padding-right: 0.5rem;\n\n    text-align: center\n}\n"],"names":[],"mappings":"AAAA;;;;;;;;;;;AAqBA;EAEI;;;;;AAMJ;;;;AAIA"}}]
+}

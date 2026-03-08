@@ -1,0 +1,32 @@
+/* [project]/components/Header Components/MobileMenu/_mobilemenu.css [app-client] (css) */
+.mobile-view-menu-div {
+  text-align: center;
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity, 1));
+  flex-direction: column;
+  margin: 1.25rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  display: flex;
+}
+
+@media (min-width: 1024px) {
+  .mobile-view-menu-div {
+    display: none;
+  }
+}
+
+.mobile-view-close-menu-div {
+  display: none;
+}
+
+.mobile-category-title-element-div {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem .5rem;
+  display: flex;
+}
+
+/*# sourceMappingURL=components_Header%20Components_MobileMenu__mobilemenu_css_bad6b30c._.single.css.map*/
