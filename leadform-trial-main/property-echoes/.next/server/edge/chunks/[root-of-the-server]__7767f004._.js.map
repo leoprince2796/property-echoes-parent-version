@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 16, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/leadform-trial-main/property-echoes/middleware.js"],"sourcesContent":["import { NextResponse } from \"next/server\";\n\nexport function middleware(request) {\n  const host = request.headers.get(\"host\") || \"\";\n\n  if (host.startsWith(\"www.\")) {\n    const nonWwwHost = host.replace(/^www\\./, \"\");\n    const { pathname, search } = request.nextUrl;\n    const redirectUrl = `https://${nonWwwHost}${pathname}${search}`;\n    return NextResponse.redirect(redirectUrl, 308);\n  }\n\n  return NextResponse.next();\n}\n\nexport const config = {\n  matcher: [\n    \"/((?!_next/static|_next/image|favicon.ico|.*\\\\.(?:svg|png|jpg|jpeg|gif|webp|ico)$).*)\",\n  ],\n};\n"],"names":[],"mappings":";;;;;;AAAA;AAAA;;AAEO,SAAS,WAAW,OAAO;IAChC,MAAM,OAAO,QAAQ,OAAO,CAAC,GAAG,CAAC,WAAW;IAE5C,IAAI,KAAK,UAAU,CAAC,SAAS;QAC3B,MAAM,aAAa,KAAK,OAAO,CAAC,UAAU;QAC1C,MAAM,EAAE,QAAQ,EAAE,MAAM,EAAE,GAAG,QAAQ,OAAO;QAC5C,MAAM,cAAc,CAAC,QAAQ,EAAE,aAAa,WAAW,QAAQ;QAC/D,OAAO,mPAAY,CAAC,QAAQ,CAAC,aAAa;IAC5C;IAEA,OAAO,mPAAY,CAAC,IAAI;AAC1B;AAEO,MAAM,SAAS;IACpB,SAAS;QACP;KACD;AACH"}}]
+}

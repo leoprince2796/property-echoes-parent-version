@@ -1,0 +1,26 @@
+/* [project]/leadform-trial-main/property-echoes/components/Header/_header.css [app-client] (css) */
+.header-div {
+  z-index: 50;
+  --tw-bg-opacity: 1;
+  background-color: rgba(0, 33, 71, var(--tw-bg-opacity, 1));
+  flex-direction: column;
+  display: flex;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.header-elements-div {
+  justify-content: space-between;
+  width: 100%;
+  height: 50px;
+  display: flex;
+}
+
+@media (min-width: 1024px) {
+  .header-elements-div {
+    height: 90px;
+  }
+}
+
+/*# sourceMappingURL=leadform-trial-main_property-echoes_components_Header__header_css_bad6b30c._.single.css.map*/

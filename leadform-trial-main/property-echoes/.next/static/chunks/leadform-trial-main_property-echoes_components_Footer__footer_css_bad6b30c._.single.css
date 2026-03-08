@@ -1,0 +1,49 @@
+/* [project]/leadform-trial-main/property-echoes/components/Footer/_footer.css [app-client] (css) */
+.footer-div {
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity, 1));
+  flex-direction: column;
+  margin-top: 350vh;
+  display: flex;
+  bottom: 0;
+}
+
+@media (min-width: 1024px) {
+  .footer-div {
+    margin-top: auto;
+  }
+}
+
+.disclaimer-section {
+  text-align: center;
+  --tw-text-opacity: 1;
+  color: rgba(0, 0, 0, var(--tw-text-opacity, 1));
+  background-color: rgba(0, 0, 0, 0);
+  flex-direction: column;
+  margin: 1.25rem;
+  padding: 1.25rem;
+  display: flex;
+}
+
+.footer-elements-div {
+  --tw-bg-opacity: 1;
+  background-color: rgba(0, 0, 0, var(--tw-bg-opacity, 1));
+  text-align: center;
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity, 1));
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: auto;
+  padding: 1.25rem;
+  display: flex;
+  bottom: 0;
+}
+
+@media (min-width: 640px) {
+  .footer-elements-div {
+    flex-direction: row;
+  }
+}
+
+/*# sourceMappingURL=leadform-trial-main_property-echoes_components_Footer__footer_css_bad6b30c._.single.css.map*/

@@ -1,8 +1,17 @@
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   trailingSlash: false,
-  allowedDevOrigins: ['*.replit.dev', '*.pike.replit.dev', '*.replit.app', '*.sisko.replit.dev', 'localhost', '127.0.0.1'],
+  allowedDevOrigins: ['*.replit.dev', '*.pike.replit.dev', '*.replit.app', '*.sisko.replit.dev', '*.kirk.replit.dev', 'localhost', '127.0.0.1'],
+  turbopack: {
+    root: __dirname,
+  },
   async redirects() {
     return [
       {

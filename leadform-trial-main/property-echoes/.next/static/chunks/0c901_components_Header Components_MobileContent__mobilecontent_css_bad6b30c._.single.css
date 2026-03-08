@@ -1,0 +1,29 @@
+/* [project]/leadform-trial-main/property-echoes/components/Header Components/MobileContent/_mobilecontent.css [app-client] (css) */
+.mobile-content-div {
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity, 1));
+  align-items: center;
+  margin: 1.25rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  display: flex;
+}
+
+@media (min-width: 1024px) {
+  .mobile-content-div {
+    display: none;
+  }
+}
+
+.mobile-content-options-div {
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity, 1));
+  flex-direction: column;
+  display: flex;
+}
+
+.category-title-element-div {
+  padding: .75rem;
+}
+
+/*# sourceMappingURL=0c901_components_Header%20Components_MobileContent__mobilecontent_css_bad6b30c._.single.css.map*/

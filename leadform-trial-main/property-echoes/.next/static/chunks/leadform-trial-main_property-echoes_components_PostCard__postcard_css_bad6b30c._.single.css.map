@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/leadform-trial-main/property-echoes/components/PostCard/_postcard.css"],"sourcesContent":["/* Styles replaced by inline Tailwind for modern card layout */\n.postcard-div {\n    display: flex;\n    flex-direction: column;\n    --tw-text-opacity: 1;\n    color: rgb(0 0 0 / var(--tw-text-opacity, 1))\n}\n@media (min-width: 1024px) {\n    .postcard-div {\n        grid-column: span 8 / span 8\n    }\n}\n"],"names":[],"mappings":"AACA;;;;;;;AAMA;EACI"}}]
+}

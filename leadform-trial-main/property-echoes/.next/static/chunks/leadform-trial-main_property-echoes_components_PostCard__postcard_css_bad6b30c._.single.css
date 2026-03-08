@@ -1,0 +1,15 @@
+/* [project]/leadform-trial-main/property-echoes/components/PostCard/_postcard.css [app-client] (css) */
+.postcard-div {
+  --tw-text-opacity: 1;
+  color: rgba(0, 0, 0, var(--tw-text-opacity, 1));
+  flex-direction: column;
+  display: flex;
+}
+
+@media (min-width: 1024px) {
+  .postcard-div {
+    grid-column: span 8 / span 8;
+  }
+}
+
+/*# sourceMappingURL=leadform-trial-main_property-echoes_components_PostCard__postcard_css_bad6b30c._.single.css.map*/

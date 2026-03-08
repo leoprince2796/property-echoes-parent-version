@@ -1,0 +1,19 @@
+/* [project]/leadform-trial-main/property-echoes/components/Header Components/BlogTitle/_blogtitle.css [app-client] (css) */
+.blog-title-div {
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity, 1));
+  align-items: center;
+  margin: 1.25rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  display: flex;
+}
+
+@media (min-width: 1024px) {
+  .blog-title-div {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
+
+/*# sourceMappingURL=99aee_property-echoes_components_Header%20Components_BlogTitle__blogtitle_css_bad6b30c._.single.css.map*/
