@@ -1,0 +1,3 @@
+{
+  "/category/[slug]/[postslug]/page": "app/category/[slug]/[postslug]/page.js"
+}

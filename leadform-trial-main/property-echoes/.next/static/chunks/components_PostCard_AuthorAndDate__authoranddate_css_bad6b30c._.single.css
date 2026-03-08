@@ -1,0 +1,29 @@
+/* [project]/components/PostCard/AuthorAndDate/_authoranddate.css [app-client] (css) */
+.author-date-display-div {
+  align-items: center;
+  display: flex;
+}
+
+.author-image {
+  border-radius: 9999px;
+  max-width: 35px;
+  max-height: 35px;
+  padding: .25rem;
+}
+
+.author-display-div {
+  justify-content: center;
+  align-items: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+}
+
+.date-display-div {
+  align-items: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+}
+
+/*# sourceMappingURL=components_PostCard_AuthorAndDate__authoranddate_css_bad6b30c._.single.css.map*/
