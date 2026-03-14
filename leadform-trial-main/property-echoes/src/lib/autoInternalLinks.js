@@ -23,26 +23,45 @@ export function autoInternalLinks(content, currentSlug, allBlogs) {
       .trim();
 
     const words = cleanedTitle.split(" ").filter(Boolean);
-    const keyword = words.slice(0, 3).join(" ");
 
-    if (!keyword || keyword.length < 4) return;
+    if (words.length < 2) return;
 
-    const escapedKeyword = keyword.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    const regex = new RegExp(`\\b(${escapedKeyword})\\b`, "i");
+    const variations = [];
 
-    if (regex.test(updatedContent)) {
-      const categorySlug =
-        Array.isArray(category) && category.length > 0
-          ? category[0].slug
-          : "uncategorised";
+    if (words.length >= 2) variations.push(words.slice(0, 2).join(" "));
+    if (words.length >= 3) variations.push(words.slice(1, 3).join(" "));
+    if (words.length >= 3) variations.push(words.slice(0, 3).join(" "));
+    if (words.length >= 2) variations.push(words.slice(-2).join(" "));
 
-      updatedContent = updatedContent.replace(
-        regex,
-        `<a href="/category/${categorySlug}/${slug}" class="internal-link">$1</a>`
-      );
+    const seen = new Set();
+    const uniqueVariations = variations.filter((v) => {
+      if (!v || v.length < 4 || seen.has(v)) return false;
+      seen.add(v);
+      return true;
+    });
 
-      linkedSlugs.add(slug);
-      linkCount++;
+    const categorySlug =
+      Array.isArray(category) && category.length > 0
+        ? category[0].slug
+        : "uncategorised";
+
+    for (const keyword of uniqueVariations) {
+      if (linkCount >= 8) break;
+      if (linkedSlugs.has(slug)) break;
+
+      const escapedKeyword = keyword.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const regex = new RegExp(`\\b(${escapedKeyword})\\b`, "i");
+
+      if (regex.test(updatedContent)) {
+        updatedContent = updatedContent.replace(
+          regex,
+          `<a href="/category/${categorySlug}/${slug}" class="internal-link">$1</a>`
+        );
+
+        linkedSlugs.add(slug);
+        linkCount++;
+        break;
+      }
     }
   });
 
