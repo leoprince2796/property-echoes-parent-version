@@ -368,7 +368,7 @@ export default async function PostPage({ params }) {
       <div className="container bg-transparent text-black mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="flex flex-col m-2 min-h-screen lg:col-span-8">
-            <PostDetails details={postDetails} relatedPosts={relatedPosts} />
+            <PostDetails details={postDetails} relatedPosts={relatedPosts} allBlogs={postsDataFetched} />
             {!["about", "contact", "privacy-policy", "terms-of-use"].includes(postDetails.slug) && (
               <div className="mt-12 flex justify-center">
                 <LeadForm leadSource={postDetails.slug} />

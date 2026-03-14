@@ -59,3 +59,16 @@ h1, h2, h3, .serif {
 .pro-card {
   @apply bg-white border border-gray-100 rounded-none shadow-none hover:shadow-lg transition-all duration-300;
 }
+
+/* Auto Internal Links */
+.internal-link {
+  color: #002147;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.internal-link:hover {
+  color: #c5a059;
+}

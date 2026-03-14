@@ -6,8 +6,9 @@ import AuthorAndDate from "../PostCard/AuthorAndDate/AuthorAndDate";
 import sanitize from "sanitize-html";
 import Link from "next/link";
 import parse from "html-react-parser";
+import { autoInternalLinks } from "@/lib/autoInternalLinks";
 
-const PostDetails = ({ details, relatedPosts }) => {
+const PostDetails = ({ details, relatedPosts, allBlogs = [] }) => {
   useEffect(() => {
     // If there's a script tag in the content, we need to execute it manually
     // because dangerouslySetInnerHTML doesn't execute scripts.
@@ -42,7 +43,11 @@ const PostDetails = ({ details, relatedPosts }) => {
     }
   }, [details]);
 
-  const cleanHTML = sanitize(details.content.html, {
+  const linkedHTML = allBlogs.length > 0
+    ? autoInternalLinks(details.content.html, details.slug, allBlogs)
+    : details.content.html;
+
+  const cleanHTML = sanitize(linkedHTML, {
     allowedTags: sanitize.defaults.allowedTags.concat([
       "img",
       "h1",

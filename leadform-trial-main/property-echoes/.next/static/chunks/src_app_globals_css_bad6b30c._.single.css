@@ -1634,6 +1634,18 @@ h1, h2, h3, .serif {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-ring-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-shadow);
 }
 
+.internal-link {
+  color: #002147;
+  text-underline-offset: 2px;
+  font-weight: 500;
+  text-decoration: underline;
+  transition: color .2s;
+}
+
+.internal-link:hover {
+  color: #c5a059;
+}
+
 .placeholder\:text-gray-500::placeholder {
   --tw-text-opacity: 1;
   color: rgba(107, 114, 128, var(--tw-text-opacity, 1));
