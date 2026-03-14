@@ -125,15 +125,30 @@ function autoInternalLinks(content, currentSlug, allBlogs) {
         const stopWords = /\b(for|the|and|to|in|a|of|is|are|on|with|at|by|from|how|what|why|when|where|do|does|your|you|uk|its|it|this|that|our|all|as|an)\b/gi;
         const cleanedTitle = title.toLowerCase().replace(/[^a-z0-9\s]/g, " ").replace(stopWords, " ").replace(/\s+/g, " ").trim();
         const words = cleanedTitle.split(" ").filter(Boolean);
-        const keyword = words.slice(0, 3).join(" ");
-        if (!keyword || keyword.length < 4) return;
-        const escapedKeyword = keyword.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-        const regex = new RegExp("\\b(".concat(escapedKeyword, ")\\b"), "i");
-        if (regex.test(updatedContent)) {
-            const categorySlug = Array.isArray(category) && category.length > 0 ? category[0].slug : "uncategorised";
-            updatedContent = updatedContent.replace(regex, '<a href="/category/'.concat(categorySlug, "/").concat(slug, '" class="internal-link">$1</a>'));
-            linkedSlugs.add(slug);
-            linkCount++;
+        if (words.length < 2) return;
+        const variations = [];
+        if (words.length >= 2) variations.push(words.slice(0, 2).join(" "));
+        if (words.length >= 3) variations.push(words.slice(1, 3).join(" "));
+        if (words.length >= 3) variations.push(words.slice(0, 3).join(" "));
+        if (words.length >= 2) variations.push(words.slice(-2).join(" "));
+        const seen = new Set();
+        const uniqueVariations = variations.filter((v)=>{
+            if (!v || v.length < 4 || seen.has(v)) return false;
+            seen.add(v);
+            return true;
+        });
+        const categorySlug = Array.isArray(category) && category.length > 0 ? category[0].slug : "uncategorised";
+        for (const keyword of uniqueVariations){
+            if (linkCount >= 8) break;
+            if (linkedSlugs.has(slug)) break;
+            const escapedKeyword = keyword.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+            const regex = new RegExp("\\b(".concat(escapedKeyword, ")\\b"), "i");
+            if (regex.test(updatedContent)) {
+                updatedContent = updatedContent.replace(regex, '<a href="/category/'.concat(categorySlug, "/").concat(slug, '" class="internal-link">$1</a>'));
+                linkedSlugs.add(slug);
+                linkCount++;
+                break;
+            }
         }
     });
     return updatedContent;
