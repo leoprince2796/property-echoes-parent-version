@@ -1,0 +1,114 @@
+You are working inside an existing Next.js project where blog posts are stored in JSON files and rendered dynamically.
+
+Each blog object contains at least:
+
+* title
+* slug
+* content
+
+Goal:
+Build an automatic internal linking system that links blog posts together based on titles and keywords without modifying the JSON CMS files.
+
+Requirements:
+
+1. Create a new utility file:
+
+/lib/autoInternalLinks.js
+
+2. In this file, create a function that accepts:
+
+* blog content
+* the current blog slug
+* the list of all blogs
+
+The function should automatically insert internal links to other blog posts.
+
+3. Extract keywords from other blog titles.
+
+Example:
+
+If another blog title is:
+"Google Maps Ranking for Estate Agents"
+
+Convert it to a keyword phrase:
+"google maps ranking"
+
+4. If the keyword appears inside the current blog content, replace the first occurrence with an internal link.
+
+Example replacement:
+
+<a href="/blog/google-maps-ranking-estate-agents">google maps ranking</a>
+
+5. Limit the number of inserted links to 8 per article to avoid spam.
+
+6. Ensure the function does NOT link:
+
+* the blog to itself
+* duplicate links to the same article
+
+7. Implementation example:
+
+export function autoInternalLinks(content, currentSlug, allBlogs) {
+let updatedContent = content;
+let linkCount = 0;
+
+allBlogs.forEach(blog => {
+
+```
+if (blog.slug === currentSlug) return;
+if (linkCount >= 8) return;
+
+const keyword = blog.title
+  .toLowerCase()
+  .replace(/for|the|and|to|in|a|of/g, "")
+  .trim();
+
+const regex = new RegExp(`\\b${keyword}\\b`, "i");
+
+if (regex.test(updatedContent)) {
+  updatedContent = updatedContent.replace(
+    regex,
+    `<a href="/blog/${blog.slug}" class="internal-link">${keyword}</a>`
+  );
+
+  linkCount++;
+}
+```
+
+});
+
+return updatedContent;
+}
+
+8. In the blog rendering component (blog/[slug].js or BlogPage.js):
+
+Import the function.
+
+import { autoInternalLinks } from "@/lib/autoInternalLinks";
+
+9. Before rendering blog content:
+
+const processedContent = autoInternalLinks(
+blog.content,
+blog.slug,
+allBlogs
+);
+
+10. Render the processed content:
+
+<div dangerouslySetInnerHTML={{ __html: processedContent }} />
+
+11. Add styling for internal links in global CSS:
+
+.internal-link {
+color: #0070f3;
+text-decoration: underline;
+}
+
+Final Result:
+
+* Every blog automatically links to other related blogs
+* Works for all existing blogs
+* Works automatically for future blogs added to JSON
+* Each article generates up to 8 internal links dynamically
+* No manual editing required
