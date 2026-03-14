@@ -1,0 +1,78 @@
+You are working inside a Next.js project that already has an internal linking system implemented in:
+
+src/lib/autoInternalLinks.js
+
+The current system does not generate links because it tries to match long keyword phrases derived from the full blog title. These phrases rarely appear in the article content.
+
+Modify the implementation to extract shorter keyword anchors (2–3 words) from blog titles so internal linking triggers more frequently.
+
+Requirements:
+
+1. Open the file:
+
+src/lib/autoInternalLinks.js
+
+2. Replace the keyword extraction logic with a shorter phrase generator.
+
+Old logic:
+
+const keyword = title
+.toLowerCase()
+.replace(stopWords, " ")
+.replace(/\s+/g, " ")
+.trim();
+
+Replace it with:
+
+const cleanedTitle = title
+.toLowerCase()
+.replace(stopWords, " ")
+.replace(/\s+/g, " ")
+.trim();
+
+const words = cleanedTitle.split(" ");
+
+const keyword = words.slice(0, 3).join(" ");
+
+3. Ensure the keyword is valid:
+
+if (!keyword || keyword.length < 4) return;
+
+4. Simplify the regex so matching becomes more reliable.
+
+Replace the current regex with:
+
+const escapedKeyword = keyword.replace(/[.*+?^${}()|[]\]/g, "\$&");
+
+const regex = new RegExp(`\\b(${escapedKeyword})\\b`, "i");
+
+5. Ensure we still avoid:
+
+* linking a post to itself
+* duplicate links
+* more than 8 links per article
+
+6. Preserve the existing URL structure:
+
+/category/{category-slug}/{post-slug}
+
+Example link output:
+
+<a href="/category/${categorySlug}/${slug}" class="internal-link">$1</a>
+
+7. Ensure the function still runs BEFORE the sanitize-html step in PostDetails.jsx so links survive sanitization.
+
+8. Do not modify the JSON CMS structure or the blog data format.
+
+9. After implementing, verify that when an article contains phrases such as:
+
+* "estate agents"
+* "switch estate agents"
+* "property valuation"
+* "google maps ranking"
+
+they automatically convert into internal links pointing to the relevant blog posts.
+
+Final result:
+
+Existing blog posts and all future posts should automatically generate internal links dynamically during page render.
